@@ -9,7 +9,7 @@ let
         key = "<leader>" + istr;
         action.__raw = "function() require'harpoon':list():select(" + izero + ") end";
         mode = "n";
-        options.desc = "Harpoon goto file " + istr;
+        options.desc = "Harpoon goto file " + izero;
       }) 10;
 
 in

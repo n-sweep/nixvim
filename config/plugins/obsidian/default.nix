@@ -19,7 +19,7 @@
       templates = {
 
         date_format = "%Y-%m-%d";
-        subdir = "~/Obsidian/slipbox/templates";
+        subdir = "/home/n/Obsidian/slipbox/templates";
 
         substitutions.title_date = { __raw = ''
           function()
@@ -33,7 +33,7 @@
 
         {
           name = "slipbox";
-          path = "~/Obsidian/slipbox";
+          path = "/home/n/Obsidian/slipbox";
           overrides = {
             notes_subdir = "notes";
             daily_notes = {
