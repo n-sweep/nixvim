@@ -38,7 +38,7 @@
             notes_subdir = "notes";
             daily_notes = {
               folder = "notes/daily";
-              template = "templates/daily.md";
+              template = "/home/n/Obsidian/slipbox/templates/daily.md";
             };
           };
         }
