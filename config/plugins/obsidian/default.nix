@@ -38,7 +38,7 @@
             notes_subdir = "notes";
             daily_notes = {
               folder = "notes/daily";
-              template = "daily.md";
+              template = "templates/daily.md";
             };
           };
         }
