@@ -1,4 +1,9 @@
-{ ... }: {
+{ ... }:
+let
+  obs_dir = "/home/n/Obsidian";
+  templates_dir = "${obs_dir}/templates";
+in
+{
 
   plugins.obsidian = {
 
@@ -19,7 +24,7 @@
       templates = {
 
         date_format = "%Y-%m-%d";
-        subdir = "/home/n/Obsidian/slipbox/templates";
+        subdir = templates_dir;
 
         substitutions.title_date = { __raw = ''
           function()
@@ -33,12 +38,12 @@
 
         {
           name = "slipbox";
-          path = "/home/n/Obsidian/slipbox";
+          path = "${obs_dir}/slipbox";
           overrides = {
             notes_subdir = "notes";
             daily_notes = {
               folder = "notes/daily";
-              template = "/home/n/Obsidian/slipbox/templates/daily.md";
+              template = "${templates_dir}/daily.md";
             };
           };
         }
