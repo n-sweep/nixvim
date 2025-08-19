@@ -7,6 +7,7 @@
   ];
 
   enableMan = true;
+  withPython3 = true;
 
   globals = {
     mapleader = " ";
