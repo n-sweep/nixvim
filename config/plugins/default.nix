@@ -41,9 +41,8 @@ in
     which-key.enable = true;
 
     # try later
-    # codium-nvim.enable = true;
     # gitignore.enable = true;
-    # qmk.enable = true;
+    qmk.enable = true;
 
   };
 
