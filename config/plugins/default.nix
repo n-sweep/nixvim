@@ -40,9 +40,20 @@ in
     otter.enable = true;
     which-key.enable = true;
 
-    # try later
-    # gitignore.enable = true;
-    qmk.enable = true;
+    qmk = {
+      enable = true;
+      settings = {
+        name = "";
+        layout = [
+          "x x x x x x x _ _ _ _ _ _ _ x x x x x x x"
+          "x x x x x x x _ _ _ _ _ _ _ x x x x x x x"
+          "x x x x x x x _ x x _ x x _ x x x x x x x"
+          "x x x x x x _ _ _ x _ x _ _ _ x x x x x x"
+          "x x x x x _ _ x x x _ x x x _ _ x x x x x"
+        ];
+        variant = "zmk";
+      };
+    };
 
   };
 
