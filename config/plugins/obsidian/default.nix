@@ -1,7 +1,6 @@
 { ... }:
 let
   obs_dir = "/home/n/Obsidian";
-  templates_dir = "${obs_dir}/templates";
 in
 {
 
@@ -24,8 +23,6 @@ in
       templates = {
 
         date_format = "%Y-%m-%d";
-        subdir = templates_dir;
-
         substitutions.title_date = { __raw = ''
           function()
             return os.date("%A, %B %d")
@@ -43,7 +40,7 @@ in
             notes_subdir = "notes";
             daily_notes = {
               folder = "notes/daily";
-              template = "${templates_dir}/daily.md";
+              template = "templates/daily.md";
             };
           };
         }
