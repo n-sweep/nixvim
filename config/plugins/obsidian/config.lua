@@ -4,15 +4,14 @@ local autocmd = vim.api.nvim_create_autocmd
 
 local function keybindings()
 
-    km.set("n", "<CR>", ":ObsidianFollowLink <CR>")
-    km.set('n', '<leader>bb', ":ObsidianBacklinks <CR>")
-    km.set('n', '<leader>bt', ":ObsidianToday <CR>")
-    km.set('n', '<leader>bT', ":ObsidianTomorrow <CR>")
-    km.set('n', '<leader>by', ":ObsidianYesterday <CR>")
-    km.set('n', '<leader>bs', ":ObsidianSearch <CR>")
-    km.set('v', 'bs', ":ObsidianSearch <CR>")
-    km.set('v', 'bl', ":ObsidianLink <CR>")
-    km.set('v', 'bL', ":ObsidianLinkNew <CR>")
+    km.set('n', '<leader>bb', ":Obsidian backlinks <CR>")
+    km.set('n', '<leader>bt', ":Obsidian today <CR>")
+    km.set('n', '<leader>bT', ":Obsidian today 1 <CR>")
+    km.set('n', '<leader>by', ":Obsidian today -1 <CR>")
+    km.set('n', '<leader>bs', ":Obsidian search <CR>")
+    km.set('v', 'bs', ":Obsidian search <CR>")
+    km.set('v', 'bl', ":Obsidian link <CR>")
+    km.set('v', 'bL', ":Obsidian link_new <CR>")
 
 end
 
