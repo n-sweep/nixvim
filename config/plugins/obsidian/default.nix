@@ -23,11 +23,7 @@ in
       templates = {
 
         date_format = "%Y-%m-%d";
-        substitutions.title_date = { __raw = ''
-          function()
-            return os.date("%A, %B %d")
-          end
-        '';};
+        subdir = "templates/";
 
       };
 
