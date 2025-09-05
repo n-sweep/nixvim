@@ -27,6 +27,11 @@ in
 
       };
 
+      daily_notes = {
+        alias_format = "%B %-d, %Y";
+        template = "templates/daily.md";
+      };
+
       workspaces = [
 
         {
@@ -34,10 +39,7 @@ in
           path = "${obs_dir}/slipbox";
           overrides = {
             notes_subdir = "notes";
-            daily_notes = {
-              folder = "notes/daily";
-              template = "templates/daily.md";
-            };
+            daily_notes.folder = "notes/daily";
           };
         }
 
