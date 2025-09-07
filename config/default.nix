@@ -90,7 +90,34 @@
     };
 
     "ftplugin/markdown.lua" = {
-      extraConfigLua = ''vim.cmd([[syntax region hideAnswers matchgroup=Conceal start="^# A.*" end="$" concealends conceal]])'';
+      opts = {
+        wrap = true;
+        linebreak = true;
+        breakindent = true;
+      };
+      keymaps = [
+
+        {
+          key = "k";
+          action = "gk";
+          mode = [ "n" "v" ];
+          options = {
+            silent = true;
+            desc = "Go Up by Display Lines";
+          };
+        }
+
+        {
+          key = "j";
+          action = "gj";
+          mode = [ "n" "v" ];
+          options = {
+            silent = true;
+            desc = "Go Down by Display Lines";
+          };
+        }
+
+      ];
     };
 
   };

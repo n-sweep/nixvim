@@ -23,7 +23,7 @@
 
     { # toggle line break
       key = "<F7>";
-      action = ":set wrap! linebreak!<CR>";
+      action = ":set wrap! linebreak! breakindent!<CR>";
       options = {
         silent = true;
         desc = "Set line breaks";
