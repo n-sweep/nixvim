@@ -67,6 +67,10 @@
           action = "lsp_definitions";
           options.desc = "Telescope LSP Definitions";
       };
+      "<leader>lj" = {
+          action = "jumplist";
+          options.desc = "Telescope jumplist";
+      };
     };
 
   };
