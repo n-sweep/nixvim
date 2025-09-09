@@ -94,6 +94,7 @@
         wrap = true;
         linebreak = true;
         breakindent = true;
+        conceallevel = 2;
       };
       keymaps = [
 
