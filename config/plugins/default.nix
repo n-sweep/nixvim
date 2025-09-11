@@ -35,6 +35,7 @@ in
     fidget.enable = true;
     jupytext.enable = true;
     markdown-preview.enable = true;
+    nix-develop.enable = true;
     nvim-autopairs.enable = true;
     nvim-surround.enable = true;
     otter.enable = true;
