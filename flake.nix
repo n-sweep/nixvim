@@ -39,7 +39,15 @@
           packages = {
             # Lets you run `nix run .` to start nixvim
             default = nvim;
+            fzf = pkgs.fzf;
           };
+
+          devShells = {
+            default = pkgs.mkShell {
+              buildInputs = [ pkgs.fzf ];
+            };
+          };
+
         };
     };
 }
