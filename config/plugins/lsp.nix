@@ -4,7 +4,7 @@
     enable = true;
     servers = {
       bashls.enable = true;
-      # dockerls.enable = true;
+      dockerls.enable = false;
       jsonls.enable = true;
       marksman.enable = true;
       nil_ls.enable = true;
