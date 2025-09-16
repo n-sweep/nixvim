@@ -20,15 +20,35 @@
       perSystem =
         { pkgs, system, ... }:
         let
+
+          fzfNative = pkgs.nvimPlugins.telescope-fzf-native-nvim.overrideAttrs (oldAttrs: {
+            buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.cmake pkgs.gnumake pkgs.clang ];
+            postPatch = ''
+              cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
+              cmake --build build --config Release
+              cmake --install build --prefix $out
+            '';
+          });
+
+          postPatch = ''
+            cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
+            cmake --build build --config Release
+            cmake --install build --prefix $out
+          '';
+
           nixvimLib = nixvim.lib.${system};
+
           nixvim' = nixvim.legacyPackages.${system};
+
           nixvimModule = {
             inherit pkgs;
             module = import ./config; # import the module directly
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = { inherit pkgs; };
           };
+
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
+
         in
         {
           checks = {
