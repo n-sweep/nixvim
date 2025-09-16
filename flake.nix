@@ -63,12 +63,6 @@
             fzfNative = pkgs.nvimPlugins.telescope-fzf-native-nvim;
           };
 
-          buildInputs = [
-            pkgs.cmake
-            pkgs.clang
-            pkgs.gnumake
-          ];
-
           devShells = {
             default = pkgs.mkShell {
               buildInputs = [
