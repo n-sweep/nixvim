@@ -40,11 +40,23 @@
             # Lets you run `nix run .` to start nixvim
             default = nvim;
             fzf = pkgs.fzf;
+            fzfNative = pkgs.nvimPlugins.telescope-fzf-native-nvim;
           };
+
+          buildInputs = [
+            pkgs.cmake
+            pkgs.clang
+            pkgs.gnumake
+          ];
 
           devShells = {
             default = pkgs.mkShell {
-              buildInputs = [ pkgs.fzf ];
+              buildInputs = [
+                pkgs.fzf
+                pkgs.cmake
+                pkgs.clang
+                pkgs.gnumake
+              ];
             };
           };
 
