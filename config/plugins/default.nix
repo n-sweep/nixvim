@@ -33,6 +33,7 @@ in
 
     comment.enable = true;
     fidget.enable = true;
+    fzf-lua.enable = true;
     jupytext.enable = true;
     markdown-preview.enable = true;
     nix-develop.enable = true;

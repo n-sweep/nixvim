@@ -7,7 +7,6 @@ in
   plugins.obsidian = {
 
     enable = true;
-    extraPlugins = with pkgs.vimPlugins; [ fzf-lua ];
 
     settings = {
 
