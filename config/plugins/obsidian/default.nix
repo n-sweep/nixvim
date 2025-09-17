@@ -14,6 +14,11 @@ in
       new_notes_location = "notes_subdir";
       legacy_commands = false;
 
+      ui = {
+        enable = true;
+        telescope = { };
+      };
+
       follow_url_func = { __raw = ''
         function(url)
           vim.fn.jobstart({"zen", url})
