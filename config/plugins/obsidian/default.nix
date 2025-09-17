@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   obs_dir = "/home/n/Obsidian";
 in
