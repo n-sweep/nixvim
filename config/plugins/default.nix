@@ -23,7 +23,7 @@ in
     ./lsp.nix
     ./mini.nix
     ./oil.nix
-    ./obsidian
+    # ./obsidian
     ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
