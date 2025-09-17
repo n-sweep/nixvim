@@ -15,7 +15,7 @@ in
       legacy_commands = false;
 
       picker = {
-        name = "telescope";
+        name = "telescope.nvim";
       };
 
       follow_url_func = { __raw = ''
