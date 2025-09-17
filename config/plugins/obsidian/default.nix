@@ -14,9 +14,8 @@ in
       new_notes_location = "notes_subdir";
       legacy_commands = false;
 
-      ui = {
-        enable = true;
-        telescope = { };
+      picker = {
+        name = "telescope";
       };
 
       follow_url_func = { __raw = ''
