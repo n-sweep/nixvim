@@ -9,6 +9,8 @@
   enableMan = true;
   withPython3 = true;
 
+  extraPackages = with pkgs; [ fzf ];
+
   globals = {
     mapleader = " ";
     loaded_netrw = 1;
