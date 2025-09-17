@@ -8,6 +8,8 @@
 
   enableMan = true;
   withPython3 = true;
+  viAlias = true;
+  vimAlias = true;
 
   extraPackages = with pkgs; [ fzf ];
 
