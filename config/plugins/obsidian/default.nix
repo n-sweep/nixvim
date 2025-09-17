@@ -14,10 +14,6 @@ in
       new_notes_location = "notes_subdir";
       legacy_commands = false;
 
-      picker = {
-        name = "telescope.nvim";
-      };
-
       follow_url_func = { __raw = ''
         function(url)
           vim.fn.jobstart({"zen", url})
