@@ -1,2 +1,3 @@
-require('telemux')
 -- require('pvserv')
+
+local _, _ = pcall(require, 'telemux')
