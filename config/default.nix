@@ -11,7 +11,22 @@
   viAlias = true;
   vimAlias = true;
 
-  extraPackages = with pkgs; [ fzf ];
+  extraPackages = with pkgs; [
+    fd
+    fzf
+    gcc
+    git
+    ripgrep
+  ];
+
+
+  extraPython3Packages = p: with p; [
+    jupyter-client
+    jupytext
+    pandas
+    numpy
+    plotly
+  ];
 
 
   globals = {
