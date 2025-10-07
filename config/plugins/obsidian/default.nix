@@ -1,6 +1,24 @@
 { pkgs, ... }:
 let
-  obs_dir = "/home/n/Obsidian";
+  workspaces = if pkgs.stdenv.isDarwin then [
+    {
+      name = "huron";
+      path = "/Users/n/Obsidian/huron";
+      overrides = {
+        notes_subdir = "notes";
+        daily_notes.folder = "notes/daily";
+      };
+    }
+  ] else [
+    {
+      name = "slipbox";
+      path = "/home/n/Obsidian/slipbox";
+      overrides = {
+        notes_subdir = "notes";
+        daily_notes.folder = "notes/daily";
+      };
+    }
+  ];
 in
 {
 
@@ -58,18 +76,7 @@ in
         workdays_only = false;
       };
 
-      workspaces = [
-
-        {
-          name = "slipbox";
-          path = "${obs_dir}/slipbox";
-          overrides = {
-            notes_subdir = "notes";
-            daily_notes.folder = "notes/daily";
-          };
-        }
-
-      ];
+      workspaces = workspaces;
 
     };
 
