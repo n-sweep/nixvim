@@ -20,13 +20,19 @@
       perSystem =
         { pkgs, system, ... }:
         let
+          pkgs' = pkgs.extend (final: prev: {
+            vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
+              obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (old: {
+                doCheck = false;
+              });
+            });
+          });
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
-            inherit pkgs;
-            module = import ./config; # import the module directly
-            # You can use `extraSpecialArgs` to pass additional arguments to your module files
-            extraSpecialArgs = { inherit pkgs; };
+            pkgs = pkgs';
+            module = import ./config;
+            extraSpecialArgs = { pkgs = pkgs'; };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
