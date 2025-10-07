@@ -3,7 +3,7 @@ let
   workspaces = if pkgs.stdenv.isDarwin then [
     {
       name = "huron";
-      path = "/Users/n/Obsidian/huron";
+      path = "/Users/nshreve/Obsidian/huron";
       overrides = {
         notes_subdir = "notes";
         daily_notes.folder = "notes/daily";
