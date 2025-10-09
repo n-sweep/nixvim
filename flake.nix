@@ -21,11 +21,14 @@
         { pkgs, system, ... }:
         let
           pkgs' = pkgs.extend (final: prev: {
+
+            # disable obsidian dependency check; always fails on _fzf
             vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
               obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (old: {
                 doCheck = false;
               });
             });
+
           });
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
