@@ -21,7 +21,7 @@
 
 
   extraPython3Packages = p: with p; [
-    ipython
+    ipykernel
     jupyter-client
     jupytext
     pandas
