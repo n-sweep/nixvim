@@ -19,7 +19,6 @@
     ripgrep
   ];
 
-
   extraPython3Packages = p: with p; [
     ipykernel
     jupyter-client
@@ -28,7 +27,6 @@
     numpy
     plotly
   ];
-
 
   globals = {
     mapleader = " ";

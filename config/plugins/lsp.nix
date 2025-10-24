@@ -5,6 +5,7 @@
     servers = {
       bashls.enable = true;
       dockerls.enable = false;
+      html.enable = false;
       jsonls.enable = true;
       marksman.enable = true;
       nil_ls.enable = true;
