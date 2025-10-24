@@ -21,6 +21,7 @@
       sources = [
         {name = "buffer";}
         {name = "cmp-nvim-lsp";}
+        {name = "cmp-r";}
         {name = "nvim_lsp";}
         {name = "path";}
         {name = "treesitter";}
