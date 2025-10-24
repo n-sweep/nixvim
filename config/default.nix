@@ -109,23 +109,6 @@
         breakindent = true;
         conceallevel = 2;
       };
-
-    "ftplugin/nix.lua" = {
-      opts = {
-        tabstop = 2;
-        softtabstop = 2;
-        shiftwidth = 2;
-      };
-    };
-
-    "ftplugin/R.lua" = {
-      opts = {
-        tabstop = 2;
-        softtabstop = 2;
-        shiftwidth = 2;
-      };
-    };
-
       keymaps = [
 
         {
@@ -149,6 +132,22 @@
         }
 
       ];
+    };
+
+    "ftplugin/nix.lua" = {
+      opts = {
+        tabstop = 2;
+        softtabstop = 2;
+        shiftwidth = 2;
+      };
+    };
+
+    "ftplugin/R.lua" = {
+      opts = {
+        tabstop = 2;
+        softtabstop = 2;
+        shiftwidth = 2;
+      };
     };
 
   };
