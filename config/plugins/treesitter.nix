@@ -22,6 +22,8 @@
         "markdown_inline"
         "nix"
         "python"
+        "r"
+        "rnoweb"
         "regex"
         "sql"
         "ssh_config"
