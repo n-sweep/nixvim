@@ -16,6 +16,7 @@
     fzf
     gcc
     git
+    radian
     ripgrep
   ];
 
