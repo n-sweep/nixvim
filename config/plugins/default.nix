@@ -76,6 +76,7 @@ in
 
   ];
 
+  extraConfigLua = builtins.readFile ./lua/r-nvim.lua;
   extraFiles = {
     # nvim plugins
     "plugin/colorschemes.lua".source = ./lua/colorschemes.lua;
