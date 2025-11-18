@@ -47,6 +47,10 @@
           action = "live_grep";
           options.desc = "Telescope Live grep";
       };
+      "<leader>s*" = {
+          action = "grep_string";
+          options.desc = "Telescope grep string under cursor";
+      };
       "<leader>sc" = {
           action = "commands";
           options.desc = "Telescope vim Commands";
