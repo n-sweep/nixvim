@@ -47,7 +47,7 @@
           action = "live_grep";
           options.desc = "Telescope Live grep";
       };
-      "<leader>s8" = {
+      "<leader>s*" = {
           action = "grep_string";
           options.desc = "Telescope grep string under cursor";
       };
