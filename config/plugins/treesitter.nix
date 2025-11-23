@@ -42,22 +42,10 @@
       enable = true;
       lookahead = true;
       keymaps = {
-          "af" = {
-              query = "@function.outer";
-              desc = "Around Function";
-          };
-          "if" = {
-              query = "@function.inner";
-              desc = "Inside Function";
-          };
-          "ac" = {
-              query = "@class.outer";
-              desc = "Around Class";
-          };
-          "ic" = {
-              query = "@class.inner";
-              desc = "Inside Class";
-          };
+          "af" = "@function.outer";
+          "if" = "@function.inner";
+          "ac" = "@class.outer";
+          "ic" = "@class.inner";
       };
     };
   };
