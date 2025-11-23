@@ -24,17 +24,6 @@ let
     };
   };
 
-  sonic-pi = pkgs.vimUtils.buildVimPlugin {
-    pname = "sonic-pi";
-    version = "unstable";
-    doCheck = false;
-    src = builtins.fetchGit {
-      url = "https://github.com/magicmonty/sonicpi.nvim";
-      ref = "main";
-    };
-  };
-
-
 in
 {
 
@@ -73,7 +62,6 @@ in
     cmp-r
     quarto-nvim
     r-nvim
-    sonic-pi
     tmux-nvim
     vim-dadbod
     vim-dadbod-ui
@@ -93,7 +81,6 @@ in
     "plugin/foundry.lua".source = ./lua/foundry.lua;
     "plugin/misc.lua".source = ./lua/misc.lua;
     "plugin/r-nvim.lua".source = ./lua/r-nvim.lua;
-    "plugin/sonic-pi.lua".source = ./lua/sonic-pi.lua;
     "plugin/tmux.lua".source = ./lua/tmux.lua;
     "plugin/vim-dadbod.lua".source = ./lua/vim-dadbod.lua;
   };

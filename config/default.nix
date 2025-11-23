@@ -18,8 +18,6 @@
     git
     # radian
     ripgrep
-    ruby
-    sonic-pi
   ];
 
   extraPython3Packages = p: with p; [
