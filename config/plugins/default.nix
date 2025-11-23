@@ -24,6 +24,16 @@ let
     };
   };
 
+  sonic-pi = pkgs.vimUtils.buildVimPlugin {
+    pname = "sonic-pi";
+    version = "unstable";
+    doCheck = false;
+    src = builtins.fetchGit {
+      url = "https://github.com/magicmonty/sonicpi.nvim";
+      ref = "main";
+    };
+  };
+
 
 in
 {
@@ -63,6 +73,7 @@ in
     cmp-r
     quarto-nvim
     r-nvim
+    sonic-pi
     tmux-nvim
     vim-dadbod
     vim-dadbod-ui
