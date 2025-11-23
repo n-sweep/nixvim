@@ -93,6 +93,7 @@ in
     "plugin/foundry.lua".source = ./lua/foundry.lua;
     "plugin/misc.lua".source = ./lua/misc.lua;
     "plugin/r-nvim.lua".source = ./lua/r-nvim.lua;
+    "plugin/sonic-pi.lua".source = ./lua/sonic-pi.lua;
     "plugin/tmux.lua".source = ./lua/tmux.lua;
     "plugin/vim-dadbod.lua".source = ./lua/vim-dadbod.lua;
   };
