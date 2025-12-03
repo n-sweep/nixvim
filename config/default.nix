@@ -36,6 +36,8 @@
   };
 
   opts = {
+    autoread = true;
+
     number = true;
     relativenumber = true;
     cursorline = true;
@@ -87,6 +89,13 @@
             vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
         end
       ''; };
+    }
+
+    {
+      desc = "load changes on disk";
+      event = [ "FocusGained" "BufEnter" "CursorHold" ];
+      pattern = "*";
+      command = "checktime";
     }
 
   ];
