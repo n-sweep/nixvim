@@ -23,7 +23,6 @@
         {name = "nvim_lsp";}
         {name = "path";}
         {name = "treesitter";}
-        # {name = "cmp_r";}
       ];
 
     };
