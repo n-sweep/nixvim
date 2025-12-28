@@ -14,16 +14,6 @@ let
     ];
   };
 
-  cmp-r = pkgs.vimUtils.buildVimPlugin {
-    pname = "cmp-r";
-    version = "unstable";
-    doCheck = false;
-    src = builtins.fetchGit {
-      url = "https://github.com/R-nvim/cmp-r";
-      ref = "main";
-    };
-  };
-
 in
 {
 
@@ -59,7 +49,6 @@ in
 
   extraPlugins = with pkgs.vimPlugins; [
 
-    cmp-r
     quarto-nvim
     r-nvim
     tmux-nvim

@@ -42,7 +42,7 @@ in
         end
       ''; };
 
-      note_frontmatter_func = { __raw = ''
+      frontmatter.func = { __raw = ''
         function(note)
             local out = {
               id = note.id,
