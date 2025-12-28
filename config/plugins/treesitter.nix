@@ -4,7 +4,6 @@
     enable = true;
     settings = {
       highlight.enable = true;
-      auto_install = true;
       parser_install_dir = "~/.cache/nvim/parsers";
       ensure_installed = [
         # https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
