@@ -51,7 +51,7 @@ in
 
       workspaces = workspaces;
 
-      follow_url_func = { __raw = ''
+      vim.ui.open = { __raw = ''
         function(url)
           vim.fn.jobstart({"zen", url})
         end
