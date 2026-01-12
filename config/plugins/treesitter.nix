@@ -25,7 +25,6 @@
       sql
       ssh_config
       tmux
-      vhs
       vim
       vimdoc
       yaml
