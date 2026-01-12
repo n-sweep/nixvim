@@ -22,8 +22,9 @@ in
     ./harpoon.nix
     ./lsp.nix
     ./mini.nix
-    ./oil.nix
     ./obsidian
+    ./oil.nix
+    ./opencode.nix
     ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
@@ -41,6 +42,8 @@ in
     nvim-surround.enable = true;
     otter.enable = true;
     which-key.enable = true;
+
+    opencode.enable = true;
 
     # try later
     # gitignore.enable = true;
