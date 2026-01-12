@@ -36,6 +36,21 @@ in
         name = "telescope.nvim";
       };
 
+      templates = {
+        date_format = "%Y-%m-%d";
+        subdir = "templates/";
+      };
+
+      daily_notes = {
+        alias_format = "%B %-d, %Y";
+        template = "templates/daily.md";
+        workdays_only = false;
+      };
+
+      checkbox.order = [ " " "x" "!" "~" ">" ];
+
+      workspaces = workspaces;
+
       follow_url_func = { __raw = ''
         function(url)
           vim.fn.jobstart({"zen", url})
@@ -51,8 +66,8 @@ in
               tags = note.tags
             }
 
-            -- `note.metadata` contains any manually added fields in the frontmatter.
-            -- So here we just make sure those fields are kept in the frontmatter.
+            -- `note.metadata` contains any manually added fields in the frontmatter
+            -- here we ensure those fields are kept in the frontmatter on save
             if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
               for k, v in pairs(note.metadata) do
                 out[k] = v
@@ -62,21 +77,6 @@ in
             return out
           end
       ''; };
-
-      templates = {
-
-        date_format = "%Y-%m-%d";
-        subdir = "templates/";
-
-      };
-
-      daily_notes = {
-        alias_format = "%B %-d, %Y";
-        template = "templates/daily.md";
-        workdays_only = false;
-      };
-
-      workspaces = workspaces;
 
     };
 
