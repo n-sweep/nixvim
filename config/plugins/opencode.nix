@@ -7,6 +7,7 @@
       input.enabled = true;
       autoread = true;
       provider = {
+        cmd = "AWS_PROFILE=default opencode --port";
         enabled = "tmux";
       };
     };
