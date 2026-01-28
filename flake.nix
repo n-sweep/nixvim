@@ -26,6 +26,12 @@
             vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
               obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (old: {
                 doCheck = false;
+                src = pkgs.fetchFromGitHub {
+                  owner = "obsidian-nvim";
+                  repo = "obsidian.nvim";
+                  rev = "v3.14.7";
+                  hash = "sha256-Gz5/DHNDVFy4tqWMyrmc3Rg7r1tGOx5330/B7r3OqiE=";
+                };
               });
             });
 
