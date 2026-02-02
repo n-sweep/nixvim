@@ -28,6 +28,7 @@ in
     ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
+    ./quarto.nix
   ];
 
   plugins = {
@@ -52,7 +53,6 @@ in
 
   extraPlugins = with pkgs.vimPlugins; [
 
-    quarto-nvim
     r-nvim
     tmux-nvim
     vim-dadbod
