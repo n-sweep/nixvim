@@ -38,10 +38,15 @@ in
 
       templates = {
         date_format = "%Y-%m-%d";
+        time_format = "%H:%M";
         subdir = "templates/";
         substitutions = {
           date.__raw = builtins.readFile ./lua/subs/date.lua;
+          time.__raw = builtins.readFile ./lua/subs/time.lua;
+          title.__raw = builtins.readFile ./lua/subs/title.lua;
           title_date.__raw = builtins.readFile ./lua/subs/title_date.lua;
+          id.__raw = builtins.readFile ./lua/subs/id.lua;
+          path.__raw = builtins.readFile ./lua/subs/path.lua;
         };
       };
 
