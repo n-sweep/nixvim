@@ -1,4 +1,5 @@
-function _(ctx, suffix)
+---@diagnostic disable: miss-name
+function(ctx, suffix)
     local format_date = require("obsidian.util").format_date
     local format = suffix or Obsidian.opts.templates.date_format
 

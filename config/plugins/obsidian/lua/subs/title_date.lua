@@ -1,4 +1,5 @@
-function _(ctx)
+---@diagnostic disable: miss-name
+function(ctx)
     if not ctx.partial_note then return "" end
 
     local id = ctx.partial_note.id
@@ -18,4 +19,3 @@ function _(ctx)
 
     return os.date("%A, %b ", ts) .. day .. suffix
 end
-
