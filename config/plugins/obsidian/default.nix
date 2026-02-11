@@ -39,6 +39,10 @@ in
       templates = {
         date_format = "%Y-%m-%d";
         subdir = "templates/";
+        substitutions = {
+          date.__raw = builtins.readFile ./lua/subs/date.lua;
+          title_date.__raw = builtins.readFile ./lua/subs/title_date.lua;
+        };
       };
 
       daily_notes = {
@@ -57,30 +61,30 @@ in
         end
       ''; };
 
-      frontmatter.func = { __raw = ''
+      frontmatter.func.__raw = ''
         function(note)
-            local out = {
-              id = note.id,
-              title = note.title,
-              aliases = note.aliases,
-              tags = note.tags
-            }
+          local out = {
+            id = note.id,
+            title = note.title,
+            aliases = note.aliases,
+            tags = note.tags
+          }
 
-            -- `note.metadata` contains any manually added fields in the frontmatter
-            -- here we ensure those fields are kept in the frontmatter on save
-            if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-              for k, v in pairs(note.metadata) do
-                out[k] = v
-              end
+          -- `note.metadata` contains any manually added fields in the frontmatter
+          -- here we ensure those fields are kept in the frontmatter on save
+          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            for k, v in pairs(note.metadata) do
+              out[k] = v
             end
-
-            return out
           end
-      ''; };
+
+          return out
+        end
+      '';
 
     };
 
-    luaConfig.post = builtins.readFile ./config.lua;
+    luaConfig.post = builtins.readFile ./lua/config.lua;
 
   };
 
