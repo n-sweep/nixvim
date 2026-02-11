@@ -29,8 +29,8 @@
                 src = pkgs.fetchFromGitHub {
                   owner = "obsidian-nvim";
                   repo = "obsidian.nvim";
-                  rev = "v3.15.8";
-                  hash = "sha256-Dkis9Q5GvHHAGa4ltzjr8rH8cqTJ6UTZNjOx3NLQ5zc=";
+                  rev = "main";
+                  hash = "sha256-Xl5Bq8yyZ/9Wlm/ydHXrkCRJzdoIp/vdyXZ9nZjvopY=";
                 };
               });
             });
