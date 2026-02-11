@@ -46,6 +46,6 @@ end
 
 -- start foundry-nvim when an .ipynb file is opened
 vim.api.nvim_create_autocmd('BufEnter', {
-    pattern = '*.ipynb',
+    pattern = {'*.ipynb', '*.qmd'},
     callback = func
 })
