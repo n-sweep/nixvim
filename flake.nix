@@ -24,6 +24,7 @@
 
             # disable obsidian dependency check; always fails on _fzf
             vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
+
               obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (old: {
                 doCheck = false;
                 src = pkgs.fetchFromGitHub {
@@ -33,6 +34,17 @@
                   hash = "sha256-Xl5Bq8yyZ/9Wlm/ydHXrkCRJzdoIp/vdyXZ9nZjvopY=";
                 };
               });
+
+              otter-nvim = vprev.otter-nvim.overrideAttrs (old: {
+                doCheck = false;
+                src = pkgs.fetchFromGitHub {
+                  owner = "jmbuhr";
+                  repo = "otter.nvim";
+                  rev = "main";
+                  hash = "sha256-L4MMWXyAZGrdhKiiTQz93nOMSAUnO8k+UQUOSl4GJ4s=";
+                };
+              });
+
             });
 
           });
