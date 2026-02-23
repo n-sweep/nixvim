@@ -87,7 +87,7 @@
       pattern = "*";
       callback = { __raw = ''
         function ()
-            vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
+            vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 80 })
         end
       ''; };
     }
