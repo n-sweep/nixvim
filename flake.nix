@@ -35,6 +35,15 @@
                 };
               });
 
+              nvim-treesitter = vprev.nvim-treesitter.overrideAttrs (old: {
+                src = pkgs.fetchFromGitHub {
+                  owner = "nvim-treesitter";
+                  repo = "nvim-treesitter";
+                  rev = "42fc28ba918343ebfd5565147a42a26580579482";
+                  hash = "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=";
+                };
+              });
+
               otter-nvim = vprev.otter-nvim.overrideAttrs (old: {
                 doCheck = false;
                 src = pkgs.fetchFromGitHub {
