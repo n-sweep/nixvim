@@ -42,6 +42,9 @@
                   rev = "42fc28ba918343ebfd5565147a42a26580579482";
                   hash = "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=";
                 };
+                postPatch = ''
+                  sed -i '/"except\*"/d' queries/python/highlights.scm
+                '';
               });
 
               otter-nvim = vprev.otter-nvim.overrideAttrs (old: {
