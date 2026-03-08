@@ -29,7 +29,7 @@ in
 {
 
   imports = [
-    ./codecompanion.nix
+    # ./codecompanion.nix
     ./cmp.nix
     ./harpoon.nix
     ./lsp.nix
