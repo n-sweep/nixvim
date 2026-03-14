@@ -36,6 +36,10 @@
     };
   };
 
+  extraConfigLua = ''
+    vim.treesitter.language.register('json', 'jsonc')
+  '';
+
   plugins.treesitter-textobjects = {
     enable = true;
     settings.select = {
