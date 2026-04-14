@@ -24,42 +24,20 @@
 
             # disable obsidian dependency check; always fails on _fzf
             vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
-
               obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (old: {
                 doCheck = false;
-                src = pkgs.fetchFromGitHub {
-                  owner = "obsidian-nvim";
-                  repo = "obsidian.nvim";
-                  rev = "main";
-                  hash = "sha256-Xl5Bq8yyZ/9Wlm/ydHXrkCRJzdoIp/vdyXZ9nZjvopY=";
-                };
+                # pin to specific hash
+                # src = pkgs.fetchFromGitHub {
+                #   owner = "obsidian-nvim";
+                #   repo = "obsidian.nvim";
+                #   rev = "main";
+                #   hash = "sha256-vcPSUYF+IA4duoF5zkkMB3Qid6uncEudx2+ej+yedWI=";
+                # };
               });
-
-              nvim-treesitter = vprev.nvim-treesitter.overrideAttrs (old: {
-                src = pkgs.fetchFromGitHub {
-                  owner = "nvim-treesitter";
-                  repo = "nvim-treesitter";
-                  rev = "42fc28ba918343ebfd5565147a42a26580579482";
-                  hash = "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=";
-                };
-                postPatch = ''
-                  sed -i '/"except\*"/d' queries/python/highlights.scm
-                '';
-              });
-
-              otter-nvim = vprev.otter-nvim.overrideAttrs (old: {
-                doCheck = false;
-                src = pkgs.fetchFromGitHub {
-                  owner = "jmbuhr";
-                  repo = "otter.nvim";
-                  rev = "main";
-                  hash = "sha256-L4MMWXyAZGrdhKiiTQz93nOMSAUnO8k+UQUOSl4GJ4s=";
-                };
-              });
-
             });
 
           });
+
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
@@ -67,7 +45,9 @@
             module = import ./config;
             extraSpecialArgs = { pkgs = pkgs'; };
           };
+
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
+
         in
         {
           checks = {
