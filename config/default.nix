@@ -17,7 +17,6 @@
     gcc
     git
     lsof
-    # radian
     ripgrep
   ];
 
@@ -72,24 +71,22 @@
       desc = "remove trailing whitespace on save";
       event = "BufWritePre";
       pattern = "*";
-      callback = { __raw = ''
-        function ()
+      callback = { __raw = ''function _()
             if vim.bo.filetype ~= 'markdown' then
                 vim.cmd([[%s/\s\+$//e]])
             end
-        end
-      ''; };
+        end'';
+      };
     }
 
     {
       desc = "mometarily highlight yanked text";
       event = "TextYankPost";
       pattern = "*";
-      callback = { __raw = ''
-        function ()
+      callback = { __raw = ''function _()
             vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 80 })
-        end
-      ''; };
+        end'';
+      };
     }
 
     {
