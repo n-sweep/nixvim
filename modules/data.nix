@@ -33,6 +33,8 @@
       vim-dadbod-completion
     ];
 
+    nixpkgs.config.allowUnfree = true;
+
     plugins.jupytext.enable = true;
     plugins.otter.enable = true;
     plugins.quarto.enable = true;

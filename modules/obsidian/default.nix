@@ -24,6 +24,13 @@
   in
   {
 
+    nixpkgs.overlays = [(final: prev: {
+      vimPlugins = prev.vimPlugins.extend (vfinal: vprev: {
+        obsidian-nvim = vprev.obsidian-nvim.overrideAttrs (_: { doCheck = false; });
+      });
+    })];
+
+
     plugins.obsidian = {
 
       enable = true;
