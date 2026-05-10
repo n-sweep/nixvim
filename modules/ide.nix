@@ -1,6 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 {
-  config.flake.modules.nixvim.ide = { pkgs, ... }: {
+  config.flake.modules.nixvim.ide = { config, pkgs, ... }: {
 
     # lsp
     plugins.lsp = {
@@ -73,7 +73,10 @@
     plugins.treesitter = {
       enable = true;
 
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+      # lua, vim, vimdoc, markdown, markdown_inline are bundled by neovim 0.12+
+      # installing them via nixpkgs puts older parsers first in runtimepath,
+      # overriding neovim's newer bundled parsers and breaking bundled queries
+      grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
         bash
         c
         diff
@@ -84,9 +87,6 @@
         git_rebase
         go
         json
-        lua
-        markdown
-        markdown_inline
         nix
         python
         r
@@ -95,14 +95,11 @@
         sql
         ssh_config
         tmux
-        vim
-        vimdoc
         yaml
       ];
 
       settings = {
         highlight.enable = true;
-        parser_install_dir = "~/.cache/nvim/parsers";
       };
     };
 

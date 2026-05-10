@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 {
   config.flake.modules.nixvim.data = { pkgs, ... }:
   let

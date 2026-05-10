@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 {
   config.flake.modules.nixvim.base = { pkgs, ... }: {
 
@@ -58,7 +58,8 @@
         desc = "remove trailing whitespace on save";
         event = "BufWritePre";
         pattern = "*";
-        callback = { __raw = ''function()
+        callback = { __raw = ''---@diagnostic disable: miss-name
+          function()
               if vim.bo.filetype ~= 'markdown' then
                   vim.cmd([[%s/\s\+$//e]])
               end
@@ -70,7 +71,8 @@
         desc = "mometarily highlight yanked text";
         event = "TextYankPost";
         pattern = "*";
-        callback = { __raw = ''function()
+        callback = { __raw = ''---@diagnostic disable: miss-name
+          function()
               vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 80 })
           end'';
         };
@@ -348,12 +350,6 @@
       };
     };
 
-    # oil
-    plugins.oil = {
-      enable = true;
-      settings.view_options.show_hidden = true;
-    };
-
     # telescope
     plugins.telescope = {
       enable = true;
@@ -428,16 +424,7 @@
       "plugin/tmux.lua".source         = ./_lua/tmux.lua;
     };
 
-    extraConfigLua = ''
-      vim.diagnostic.config({
-        filter = function(diag, bufnr)
-          if diag.code == "miss-name" and vim.bo[bufnr].filetype ~= "lua" then
-            return false
-          end
-          return true
-        end,
-      })
-    '';
+
 
   };
 }
