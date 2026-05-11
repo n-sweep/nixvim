@@ -1,6 +1,6 @@
 { ... }:
 {
-  config.flake.modules.nixvim.data = { pkgs, ... }:
+  config.flake.modules.nixvim.data = { lib, pkgs, ... }:
   let
     r-nvim = pkgs.vimUtils.buildVimPlugin {
       pname = "r.nvim";
@@ -24,6 +24,16 @@
       pandas
       numpy
       plotly
+    ];
+
+    # plotly -> scikit-image -> imageio -> av (PyAV); av's pythonImportsCheckPhase
+    # is SIGKILLed on Darwin due to macOS codesigning restrictions on FFmpeg dylibs
+    nixpkgs.overlays = lib.optionals pkgs.stdenv.isDarwin [
+      (_: prev: {
+        python3Packages = prev.python3Packages // {
+          av = prev.python3Packages.av.overrideAttrs (_: { pythonImportsCheck = []; });
+        };
+      })
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
