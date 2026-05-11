@@ -21,7 +21,6 @@
           settings = {
             diagnostics = {
               globals = [ "vim" ];
-              disable = [ "missing-name" ];
             };
           };
         };

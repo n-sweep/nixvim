@@ -1,6 +1,6 @@
 { ... }:
 {
-  config.flake.modules.nixvim.base = { pkgs, ... }: {
+  config.flake.modules.nixvim.oil = { pkgs, ... }: {
 
     plugins.oil = {
       enable = true;

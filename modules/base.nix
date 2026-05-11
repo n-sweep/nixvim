@@ -1,6 +1,7 @@
-{ ... }:
+{ config, ... }:
 {
   config.flake.modules.nixvim.base = { pkgs, ... }: {
+    imports = with config.flake.modules.nixvim; [ oil harpoon ];
 
     enableMan = true;
     withPython3 = true;
@@ -331,12 +332,6 @@
       }
 
     ];
-
-    # harpoon
-    plugins.harpoon = {
-      enable = true;
-      enableTelescope = true;
-    };
 
     # mini
     plugins.mini = {
