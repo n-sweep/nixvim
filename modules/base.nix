@@ -30,23 +30,12 @@
       jupytext
       pandas
       numpy
-      plotly
-    ];
-
-    nixpkgs = {
-      config.allowUnfree = true;
-
       # plotly -> scikit-image -> imageio -> av (PyAV); av's pythonImportsCheckPhase
       # is SIGKILLed on Darwin due to macOS codesigning restrictions on FFmpeg dylibs
-      overlays = lib.optionals (lib.hasSuffix "-darwin" builtins.currentSystem) [
-        (_: prev: {
-          python3Packages = prev.python3Packages // {
-            av = prev.python3Packages.av.overrideAttrs (_: { pythonImportsCheck = []; });
-          };
-        })
-      ];
+      (plotly.overridePythonAttrs (_: { nativeCheckInputs = []; doCheck = false; }))
+    ];
 
-    };
+    nixpkgs.config.allowUnfree = true;
 
   };
 }
