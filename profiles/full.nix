@@ -7,7 +7,7 @@
     nixvim'   = inputs.nixvim.legacyPackages.${system};
 
     nixvimModule = {
-      module = { imports = with mods; [ base ide data creative obsidian ]; };
+      module = { imports = with mods; [ base ]; };
     };
 
     nvim = nixvim'.makeNixvimWithModule nixvimModule;
