@@ -2,6 +2,8 @@
 {
   config.flake.modules.nixvim.telescope = { pkgs, ... }: {
 
+    extraPackages = with pkgs; [ gcc ripgrep ];
+
     plugins.telescope = {
       enable = true;
 

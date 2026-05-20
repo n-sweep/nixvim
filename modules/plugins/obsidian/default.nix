@@ -69,13 +69,13 @@
 
         workspaces = workspaces;
 
-        vim.ui.open = { __raw = ''
+        vim.ui.open = { __raw = ''---@diagnostic disable: miss-name
           function(url)
             vim.fn.jobstart({"zen", url})
-          end
-        ''; };
+          end'';
+          };
 
-        frontmatter.func.__raw = ''
+        frontmatter.func.__raw = ''---@diagnostic disable: miss-name
           function(note)
             local out = {
               id = note.id,
@@ -93,8 +93,7 @@
             end
 
             return out
-          end
-        '';
+          end'';
 
       };
 

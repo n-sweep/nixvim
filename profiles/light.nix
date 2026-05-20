@@ -7,7 +7,10 @@
     nixvim'   = inputs.nixvim.legacyPackages.${system};
 
     nixvimModule = {
-      module = { imports = with mods; [ base ]; };
+      module = { imports = with mods; [
+        base
+        ide
+      ];};
     };
 
     nvim = nixvim'.makeNixvimWithModule nixvimModule;
