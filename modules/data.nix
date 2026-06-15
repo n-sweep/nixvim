@@ -22,14 +22,14 @@
     ];
 
     plugins = {
-      jupytext.enable = true;
+      # jupytext.enable = true;
       otter.enable = true;
       quarto.enable = true;
     };
 
-    extraFiles = {
-      "plugin/foundry.lua".source     = ./plugins/_lua/foundry.lua;
-    };
+    # extraFiles = {
+    #   "plugin/foundry.lua".source = ./plugins/_lua/foundry.lua;
+    # };
 
   };
 }
