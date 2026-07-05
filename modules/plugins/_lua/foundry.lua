@@ -73,9 +73,8 @@ local function func(ev)
 end
 
 
-
 -- start foundry-nvim when an .ipynb file is opened
-vim.api.nvim_create_autocmd('BufEnter', {
+vim.api.nvim_create_autocmd('BufReadPre', {
     pattern = {'*.ipynb', '*.qmd'},
     callback = function(ev) func(ev) end
 })
