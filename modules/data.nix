@@ -27,9 +27,9 @@
       quarto.enable = true;
     };
 
-    # extraFiles = {
-    #   "plugin/foundry.lua".source = ./plugins/_lua/foundry.lua;
-    # };
+    extraFiles = {
+      "plugin/foundry.lua".source = ./plugins/lua/foundry.lua;
+    };
 
   };
 }

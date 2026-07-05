@@ -1,51 +1,81 @@
-local function func()
+local function func(ev)
 
     local foundry = require('foundry')
     foundry.setup({})
 
     -- keymaps ---------------------------------------------------------------------
 
-    vim.keymap.set('n', '<leader>fo', foundry.open_cell, { buffer = 0,
-        desc = 'Foundry open output of cell under cursor in a floating window'
-    })
-    vim.keymap.set('n', '<leader>fy', foundry.yank_cell_output, { buffer = 0,
-        desc = 'Foundry yank cell output contents'
-    })
-    vim.keymap.set('n', '<leader>fY', foundry.yank_cell_input, { buffer = 0,
-        desc = 'Foundry yank cell input contents'
-    })
-    vim.keymap.set('n', '<leader>fc', foundry.delete_cell, { buffer = 0,
-        desc = 'Foundry delete virtual text of cell under cursor'
-    })
-    vim.keymap.set('n', '<leader>fC', foundry.delete_all_cells, { buffer = 0,
-        desc = 'Foundry delete virtual text of all cells in notebook'
+
+    -- F33 -> Ctrl+Enter
+    vim.keymap.set({'n', 'v'}, '<F33>', ":FoundryExecute<CR>", {
+        desc = 'Foundry execute the current cell',
+        buffer = ev.buf,
+        silent = true,
     })
 
-    -- send keys
-    -- ctrl + enter runs a cell
-    vim.keymap.set({'n', 'v'}, '<F33>', foundry.execute_cell, { buffer = 0,
-        desc = 'Foundry execute the current cell'
+    -- F34 -> Shift+Enter
+    vim.keymap.set({'n', 'v'}, '<F34>', ":FoundryExecuteStep<CR>", {
+        desc = 'Foundry execute the current cell and step forward',
+        buffer = ev.buf,
+        silent = true,
     })
 
-    -- shift + enter runs a cell and sends the cursor to the next cell
-    vim.keymap.set({'n', 'v'}, '<F34>', function() foundry.execute_cell() foundry.goto_next_cell() end, { buffer = 0,
-        desc = 'Foundry execute the current cell and move cursor to the next'
+    -- F31 -> Shift+Tab
+    vim.keymap.set('n', '<F31>', ":FoundryNext<CR>", {
+        desc = 'Foundry move cursor to next cell',
+        buffer = 0,
+        silent = true,
     })
 
-    -- shift + tab
-    vim.keymap.set('n', '<F31>', foundry.goto_next_cell, { buffer = 0,
-        desc = 'Foundry move cursor to next cell'
+    -- F32 -> Alt+Tab
+    vim.keymap.set('n', '<F32>', ":FoundryPrev<CR>", {
+        desc = 'Foundry move cursor to previous cell',
+        buffer = 0,
+        silent = true,
     })
 
-    -- alt + tab
-    vim.keymap.set('n', '<F32>', foundry.goto_prev_cell, { buffer = 0,
-        desc = 'Foundry move cursor to next cell'
+    vim.keymap.set('n', '<leader>fo', ":FoundryOpen<CR>", {
+        desc = 'Foundry open cell output in a temporary buffer',
+        buffer = 0,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fn', ":FoundryCreateCell<CR>", {
+        desc = 'Foundry create a new cell below the current cell',
+        buffer = 0,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fN', ":FoundryCreateCellAbove<CR>", {
+        desc = 'Foundry create a new cell above the current cell',
+        buffer = 0,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fm', ":FoundryCreateMdCell<CR>", {
+        desc = 'Foundry create a new markdown cell below the current cell',
+        buffer = 0,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fM', ":FoundryCreateMdCellAbove<CR>", {
+        desc = 'Foundry create a new markdown cell above the current cell',
+        buffer = 0,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fd', ":FoundryDelete<CR>", {
+        desc = 'Foundry delete cell under cursor',
+        buffer = 0,
+        silent = true,
     })
 
 end
 
+
+
 -- start foundry-nvim when an .ipynb file is opened
 vim.api.nvim_create_autocmd('BufEnter', {
     pattern = {'*.ipynb', '*.qmd'},
-    callback = func
+    callback = function(ev) func(ev) end
 })
