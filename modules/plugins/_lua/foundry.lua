@@ -1,66 +1,66 @@
-local function func(ev)
+local function func()
 
     -- F33 -> Ctrl+Enter
     vim.keymap.set({'n', 'v'}, '<F33>', ":FoundryExecute<CR>", {
         desc = 'Foundry execute the current cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     -- F34 -> Shift+Enter
     vim.keymap.set({'n', 'v'}, '<F34>', ":FoundryExecuteStep<CR>", {
         desc = 'Foundry execute the current cell and step forward',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     -- F31 -> Shift+Tab
     vim.keymap.set('n', '<F31>', ":FoundryNext<CR>", {
         desc = 'Foundry move cursor to next cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     -- F32 -> Alt+Tab
     vim.keymap.set('n', '<F32>', ":FoundryPrev<CR>", {
         desc = 'Foundry move cursor to previous cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fo', ":FoundryOpen<CR>", {
         desc = 'Foundry open cell output in a temporary buffer',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fn', ":FoundryCreateCell<CR>", {
         desc = 'Foundry create a new cell below the current cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fN', ":FoundryCreateCellAbove<CR>", {
         desc = 'Foundry create a new cell above the current cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fm', ":FoundryCreateMdCell<CR>", {
         desc = 'Foundry create a new markdown cell below the current cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fM', ":FoundryCreateMdCellAbove<CR>", {
         desc = 'Foundry create a new markdown cell above the current cell',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
     vim.keymap.set('n', '<leader>fd', ":FoundryDelete<CR>", {
         desc = 'Foundry delete cell under cursor',
-        buffer = ev.buf,
+        buffer = 0,
         silent = true,
     })
 
