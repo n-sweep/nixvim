@@ -1,6 +1,5 @@
 local function func(ev)
 
-    local foundry = require('foundry')
     foundry.setup({})
 
     -- keymaps ---------------------------------------------------------------------
@@ -72,6 +71,8 @@ local function func(ev)
 
 end
 
+
+require('foundry')
 
 -- start foundry-nvim when an .ipynb file is opened
 vim.api.nvim_create_autocmd('BufReadPre', {
