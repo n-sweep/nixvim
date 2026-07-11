@@ -34,26 +34,38 @@ local function func(ev)
         silent = true,
     })
 
-    vim.keymap.set('n', '<leader>fn', ":FoundryCreateCell<CR>", {
+    vim.keymap.set('n', '<leader>fnc', ":FoundryCreateCell<CR>", {
         desc = 'Foundry create a new cell below the current cell',
         buffer = ev.buf,
         silent = true,
     })
 
-    vim.keymap.set('n', '<leader>fN', ":FoundryCreateCellAbove<CR>", {
+    vim.keymap.set('n', '<leader>fnC', ":FoundryCreateCellAbove<CR>", {
         desc = 'Foundry create a new cell above the current cell',
         buffer = ev.buf,
         silent = true,
     })
 
-    vim.keymap.set('n', '<leader>fm', ":FoundryCreateMdCell<CR>", {
+    vim.keymap.set('n', '<leader>fnm', ":FoundryCreateMdCell<CR>", {
         desc = 'Foundry create a new markdown cell below the current cell',
         buffer = ev.buf,
         silent = true,
     })
 
-    vim.keymap.set('n', '<leader>fM', ":FoundryCreateMdCellAbove<CR>", {
+    vim.keymap.set('n', '<leader>fnM', ":FoundryCreateMdCellAbove<CR>", {
         desc = 'Foundry create a new markdown cell above the current cell',
+        buffer = ev.buf,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fmk', ":FoundryMoveUp<CR>", {
+        desc = 'Foundry move the cell under the cursor up one cell',
+        buffer = ev.buf,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fmj', ":FoundryMoveDown<CR>", {
+        desc = 'Foundry move the cell under the cursor down one cell',
         buffer = ev.buf,
         silent = true,
     })

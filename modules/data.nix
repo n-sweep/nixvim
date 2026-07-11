@@ -9,9 +9,11 @@
 
     extraPython3Packages = p: with p; [
 
+      # foundry requirements
       ipykernel
       jupyter-client
-      jupytext
+      nbformat
+
       pandas
       numpy
 
@@ -22,7 +24,6 @@
     ];
 
     plugins = {
-      # jupytext.enable = true;
       otter.enable = true;
       quarto.enable = true;
     };
