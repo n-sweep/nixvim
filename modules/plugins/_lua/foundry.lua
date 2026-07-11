@@ -28,6 +28,18 @@ local function func(ev)
         silent = true,
     })
 
+    vim.keymap.set('n', '<leader>fy', ":FoundryYankOutput<CR>", {
+        desc = 'Foundry yank cell output',
+        buffer = ev.buf,
+        silent = true,
+    })
+
+    vim.keymap.set('n', '<leader>fy', ":FoundryYankInput<CR>", {
+        desc = 'Foundry yank cell input',
+        buffer = ev.buf,
+        silent = true,
+    })
+
     vim.keymap.set('n', '<leader>fo', ":FoundryOpen<CR>", {
         desc = 'Foundry open cell output in a temporary buffer',
         buffer = ev.buf,
