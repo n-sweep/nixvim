@@ -34,7 +34,7 @@ local function func(ev)
         silent = true,
     })
 
-    vim.keymap.set('n', '<leader>fy', ":FoundryYankInput<CR>", {
+    vim.keymap.set('n', '<leader>fY', ":FoundryYankInput<CR>", {
         desc = 'Foundry yank cell input',
         buffer = ev.buf,
         silent = true,
