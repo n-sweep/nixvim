@@ -10,7 +10,7 @@
       tokyonight-nvim
     ];
 
-    extraFiles."plugin/colorschemes.lua".source = ./plugins/_lua/colorschemes.lua;
+    extraFiles."plugin/colorschemes.lua".source = ./_lua/colorschemes.lua;
 
   };
 }
