@@ -4,6 +4,7 @@
 
     imports = with config.flake.modules.nixvim; [
       cmp
+      colorschemes
       harpoon
       lsp
       mini
@@ -28,13 +29,9 @@
     extraPlugins = with pkgs.vimPlugins; [
       tmux-nvim
       vim-python-pep8-indent
-      gruvbox-nvim
-      kanagawa-nvim
-      tokyonight-nvim
     ];
 
     extraFiles = {
-      "plugin/colorschemes.lua".source = ./plugins/_lua/colorschemes.lua;
       "plugin/misc.lua".source         = ./plugins/_lua/misc.lua;
       "plugin/tmux.lua".source         = ./plugins/_lua/tmux.lua;
     };
