@@ -4,7 +4,7 @@ local schemes = {
   oryxpro = "kanagawa-dragon",
   osgiliath = "kanagawa",
   robot_house = "gruvbox",
-  LWV4JGTWHV = "base16-solar-flare"
+  LWV4JGTWHV = "base16-solarflare"
 }
 
 local scheme = schemes[hostname] or "tokyonight"
