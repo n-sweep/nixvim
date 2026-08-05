@@ -1,28 +1,28 @@
 local function func(ev)
 
     -- F33 -> Ctrl+Enter
-    vim.keymap.set({'n', 'v'}, '<F33>', ":FoundryExecute<CR>", {
+    vim.keymap.set({'n', 'v'}, '<C-CR>', ":FoundryExecute<CR>", {
         desc = 'Foundry execute the current cell',
         buffer = ev.buf,
         silent = true,
     })
 
     -- F34 -> Shift+Enter
-    vim.keymap.set({'n', 'v'}, '<F34>', ":FoundryExecuteStep<CR>", {
+    vim.keymap.set({'n', 'v'}, '<S-CR>', ":FoundryExecuteStep<CR>", {
         desc = 'Foundry execute the current cell and step forward',
         buffer = ev.buf,
         silent = true,
     })
 
     -- F31 -> Shift+Tab
-    vim.keymap.set('n', '<F31>', ":FoundryNext<CR>", {
+    vim.keymap.set('n', '<S-Tab>', ":FoundryNext<CR>", {
         desc = 'Foundry move cursor to next cell',
         buffer = ev.buf,
         silent = true,
     })
 
     -- F32 -> Alt+Tab
-    vim.keymap.set('n', '<F32>', ":FoundryPrev<CR>", {
+    vim.keymap.set('n', '<M-Tab>', ":FoundryPrev<CR>", {
         desc = 'Foundry move cursor to previous cell',
         buffer = ev.buf,
         silent = true,
