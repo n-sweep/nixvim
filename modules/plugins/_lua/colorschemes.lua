@@ -1,14 +1,16 @@
 local hostname = vim.loop.os_gethostname()
 
-local schemes = {
-  oryxpro = "kanagawa-dragon",
-  osgiliath = "kanagawa",
-  robot_house = "gruvbox",
-  LWV4JGTWHV = "base16-solarflare",
-  FG4W0FN64X = "base16-solarflare"
-
+local scheme = "tokyonight"
+local hosts = {
+    oryxpro = "kanagawa-dragon",
+    osgiliath = "kanagawa",
+    robot_house = "gruvbox",
 }
 
-local scheme = schemes[hostname] or "tokyonight"
+if hosts[hostname] then
+    scheme = hosts[hostname]
+elseif vim.env.WORK_MACHINE then
+    scheme = "base16-solarflare"
+end
 
 vim.cmd("colorscheme " .. scheme)
