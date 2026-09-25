@@ -7,8 +7,6 @@ local hosts = {
     robot_house = "gruvbox",
 }
 
-print('hello')
-print(vim.env.WORK_MACHINE)
 if hosts[hostname] then
     scheme = hosts[hostname]
 elseif vim.env.WORK_MACHINE then
