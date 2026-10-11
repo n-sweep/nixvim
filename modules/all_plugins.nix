@@ -6,7 +6,6 @@
       data
       ide
       obsidian
-      tidal
     ];
 
   };
