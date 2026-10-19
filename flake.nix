@@ -3,10 +3,15 @@
 
   inputs = {
     nixpkgs.url     = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim.url      = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     r-nvim.url      = "github:R-nvim/R.nvim";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
