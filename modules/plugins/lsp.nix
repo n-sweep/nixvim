@@ -9,7 +9,7 @@
         dockerls.enable = false;
         html.enable = false;
         jsonls.enable = true;
-        marksman.enable = true;
+        # marksman.enable = true;
         nil_ls.enable = true;
         pyright.enable = true;
         sqls.enable = true;
